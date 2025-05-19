@@ -17,8 +17,8 @@ namespace LearningAPI1.Models.Entities
         public List<Consultant> Consultants { get; set; } = [];
         public List<RoleRelation> RoleRelations { get; set; } = [];
 
-        public required string CreatedAt;
-        public string UpdatedAt;
+        public string? CreatedAt;
+        public string? UpdatedAt;
 
     }
 }

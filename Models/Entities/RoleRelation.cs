@@ -11,7 +11,7 @@ namespace LearningAPI1.Models.Entities
         public Guid ConsultantId;
         public int ProjectId;
         public RoleName Role;
-        public required string CreatedAt;
-        public string UpdatedAt;
+        public string? CreatedAt;
+        public string? UpdatedAt;
     }
 }

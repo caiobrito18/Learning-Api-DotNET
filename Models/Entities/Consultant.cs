@@ -11,9 +11,7 @@
 
         public List<Project> Projects { get; set; } = [];
         public List<RoleRelation> RoleRelations { get; set; } = [];
-
-
-        public required string CreatedAt;
+        public string? CreatedAt;
         public string? UpdatedAt;
 
 

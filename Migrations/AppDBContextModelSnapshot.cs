@@ -37,10 +37,9 @@ namespace LearningAPI1.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedAt")
-                        .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(max)")
-                        .HasDefaultValue("getdate()");
+                        .HasDefaultValueSql("getdate()");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -52,6 +51,9 @@ namespace LearningAPI1.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UpdatedAt")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -75,10 +77,9 @@ namespace LearningAPI1.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedAt")
-                        .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(max)")
-                        .HasDefaultValue("getdate()");
+                        .HasDefaultValueSql("getdate()");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -86,6 +87,9 @@ namespace LearningAPI1.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UpdatedAt")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -102,10 +106,12 @@ namespace LearningAPI1.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("CreatedAt")
-                        .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(max)")
                         .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("UpdatedAt")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ConsultantsId", "ProjectsId");
 

@@ -21,7 +21,8 @@ namespace LearningAPI1.Migrations
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedAt = table.Column<string>(type: "nvarchar(max)", nullable: false, defaultValue: "getdate()")
+                    CreatedAt = table.Column<string>(type: "nvarchar(max)", nullable: true, defaultValueSql: "getdate()"),
+                    UpdatedAt = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -38,7 +39,8 @@ namespace LearningAPI1.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CostValue = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Area = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<string>(type: "nvarchar(max)", nullable: false, defaultValue: "getdate()")
+                    CreatedAt = table.Column<string>(type: "nvarchar(max)", nullable: true, defaultValueSql: "getdate()"),
+                    UpdatedAt = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -51,7 +53,8 @@ namespace LearningAPI1.Migrations
                 {
                     ConsultantsId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ProjectsId = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<string>(type: "nvarchar(max)", nullable: false, defaultValueSql: "getdate()")
+                    CreatedAt = table.Column<string>(type: "nvarchar(max)", nullable: true, defaultValueSql: "getdate()"),
+                    UpdatedAt = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

@@ -21,8 +21,21 @@ namespace LearningAPI1.Data
                 .UsingEntity<RoleRelation>(j =>
                 j.Property(e =>
                 e.CreatedAt).HasDefaultValueSql("getdate()"));
-            modelBuilder.Entity<Consultant>().Property(b => b.CreatedAt).HasDefaultValue("getdate()");
-            modelBuilder.Entity<Project>().Property(b => b.CreatedAt).HasDefaultValue("getdate()");
+            modelBuilder.Entity<Consultant>().Property(b => b.CreatedAt).HasDefaultValueSql("getdate()");
+            modelBuilder.Entity<Project>().Property(b => b.CreatedAt).HasDefaultValueSql("getdate()");
+
+            modelBuilder.Entity<Project>()
+                .HasMany(e => e.Consultants)
+                .WithMany(e => e.Projects)
+                .UsingEntity<RoleRelation>(j =>
+                j.Property(e =>
+                e.UpdatedAt).HasDefaultValue(null));
+
+            modelBuilder.Entity<Consultant>().Property(b => b.UpdatedAt).HasDefaultValueSql(null);
+            modelBuilder.Entity<Project>().Property(b => b.UpdatedAt).HasDefaultValueSql(null);
+
+
+
         }
     }
 }
